@@ -4,30 +4,30 @@ export type StateType = {
     profilePage: profilePageType
     messagesPage: messagesPageType
 }
-type profilePageType = {
+export type profilePageType = {
     posts: PostType[]
     updateText: string
 }
 
-type PostType = {
+export type PostType = {
     id: number
     message: string
     likesCount: number
 }
-type Dialog = {
+export type Dialog = {
     id: number
     name: string
 
 }
 
-type MessageType = {
+export type MessageType = {
     id: number
     message: string
 
 }
 
 
-type messagesPageType = {
+export type messagesPageType = {
     dialogsData: Dialog[]
     messagesData: MessageType[]
 }

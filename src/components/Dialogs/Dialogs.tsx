@@ -3,25 +3,20 @@ import s from './Dialogs.module.css'
 import {useNavigate} from 'react-router-dom';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import {Dialog, messagesPageType} from '../redux/State';
 
 
 type DialogsPropsType={
-
-
+    messagesPage: messagesPageType
 }
 
-
-
-
-export const Dialogs = () => {
-
-
+export const Dialogs = (props: DialogsPropsType) => {
     const navigate = useNavigate();
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
                 {
-                  props.dialogsData.map((dialog) =>{
+                  props.messagesPage.dialogsData.map((dialog) =>{
                       return(
                           <DialogItem name={dialog.name} id={dialog.id}/>
                       )
@@ -33,7 +28,7 @@ export const Dialogs = () => {
 
             <div className={s.messages}>
                 {
-                    props.messagesData.map((message) =>{
+                    props.messagesPage.messagesData.map((message) =>{
                         return(
                             <Message message={message.message} id={message.id}/>
                         )
