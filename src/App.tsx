@@ -5,14 +5,16 @@ import Nav from './components/Nav/Nav';
 import Profile from './components/Profile/Profile';
 import {Dialogs} from './components/Dialogs/Dialogs';
 import {Route, Routes} from 'react-router-dom';
+import {StateType} from './components/redux/State';
 
 
 type AppProps = {
-
+    state: StateType
+    addPost: (postMessage: string) => void
 }
 
 
-function App() {
+function App(props: AppProps) {
 
     return (
         <div className="app-wrapper">

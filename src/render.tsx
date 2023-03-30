@@ -5,12 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 // import state from "./components/redux/State";
-import {addPost} from './components/redux/State';
+import {addPost, StateType} from './components/redux/State';
 
 
-
-
-export let rerenderEntireTree=(state: any)=> {
+export let rerenderEntireTree=(state: StateType)=> {
 
     const root = ReactDOM.createRoot(
         document.getElementById('root') as HTMLElement

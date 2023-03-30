@@ -1,7 +1,12 @@
 import {rerenderEntireTree} from '../../render';
 
 export type StateType = {
-
+    profilePage: profilePageType
+    messagesPage: messagesPageType
+}
+type profilePageType = {
+    posts: PostType[]
+    updateText: string
 }
 
 type PostType = {
@@ -11,10 +16,21 @@ type PostType = {
 }
 type Dialog = {
     id: number
-    message: string
-    likesCount: number
+    name: string
+
 }
 
+type MessageType = {
+    id: number
+    message: string
+
+}
+
+
+type messagesPageType = {
+    dialogsData: Dialog[]
+    messagesData: MessageType[]
+}
 
 let state: StateType = {
     profilePage: {
@@ -44,7 +60,7 @@ let state: StateType = {
     }
 }
 
-export let addPost = (postMessage: any) => {
+export let addPost = (postMessage: string) => {
     let newPost = {
         id: 5,
         message: postMessage,
@@ -54,8 +70,6 @@ export let addPost = (postMessage: any) => {
     state.profilePage.posts.unshift(newPost)
     rerenderEntireTree(state);
 }
-
-
 
 
 export default state;
