@@ -24,7 +24,7 @@ function App(props: AppProps) {
 
                 <Routes>
                     <Route path={'/dialogs'} element={<Dialogs messagesPage={props.state.messagesPage} />}/>
-                    <Route path={'/profile'} element={<Profile/>}/>
+                    <Route path={'/profile'} element={<Profile posts={props.state.profilePage.posts} addPost={props.addPost} updateText={props.state.profilePage.updateText}/>}/>
                 </Routes>
             </div>
         </div>
