@@ -1,6 +1,5 @@
-import React from 'react';
 
-type CarsType = {
+export type CarsType = {
     honda: Array<string | number | HondaDvigloType>
 }
 

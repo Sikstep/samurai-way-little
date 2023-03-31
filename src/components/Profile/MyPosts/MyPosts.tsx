@@ -1,25 +1,24 @@
 import React from 'react';
 import s from './MyPosts.module.css';
+import {PostType} from '../../redux/State';
 
 type MyPostsProps = {
-
+    posts: PostType[]
+    updateText: string
+    addPost: (postMessage: string) => void
 }
 
-const MyPosts = () => {
+const MyPosts = (props: MyPostsProps) => {
 
     let newTextElement;                // надо получить текущее значение в textarea
-
 
 
     let postsElements;              // надо отрисовать посты
 
 
-
-
-
     const addPost = () => {
 
-                            // добавляем новый пост
+        // добавляем новый пост
 
     }
 
@@ -27,7 +26,8 @@ const MyPosts = () => {
         <h3>My Posts</h3>
         <div>
             <div>
-                <textarea ref={newTextElement} onChange={()=>{}} ></textarea>
+                <textarea ref={newTextElement} onChange={() => {
+                }}></textarea>
             </div>
             <div>
                 <button onClick={addPost}>Add post</button>
