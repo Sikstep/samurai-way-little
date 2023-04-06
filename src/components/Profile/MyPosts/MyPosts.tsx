@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import s from './MyPosts.module.css';
 import {PostType} from '../../redux/State';
 
@@ -10,7 +10,10 @@ type MyPostsProps = {
 
 const MyPosts = (props: MyPostsProps) => {
 
-    let newTextElement;                // надо получить текущее значение в textarea
+    const newTextElementHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        console.log(e.currentTarget)
+
+    };                // надо получить текущее значение в textarea
 
 
     let postsElements;              // надо отрисовать посты
@@ -26,8 +29,7 @@ const MyPosts = (props: MyPostsProps) => {
         <h3>My Posts</h3>
         <div>
             <div>
-                <textarea ref={newTextElement} onChange={() => {
-                }}></textarea>
+                <textarea onChange={newTextElementHandler}></textarea>
             </div>
             <div>
                 <button onClick={addPost}>Add post</button>

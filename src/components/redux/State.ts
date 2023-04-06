@@ -70,6 +70,8 @@ export let addPost = (postMessage: string) => {
     state.profilePage.posts.unshift(newPost)
     rerenderEntireTree(state);
 }
+export let updateNewText = (newText: string) => {
 
+}
 
 export default state;
